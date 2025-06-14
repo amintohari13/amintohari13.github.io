@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tentang Kami - Kopi Nusantara</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> <style>
+    /* Custom Colors (Opsional, jika Anda punya warna highlight) */
+    :root {
+      --bs-primary: #ffd700; /* Contoh warna emas/krem sebagai highlight jika diperlukan */
+    }
+
+    /* Hero */
+    .hero-story {
+      background-image: url(image/kopi4.jpg);
+      background-size: cover;
+      background-position: center;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+
+    .hero-story::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1; /* Pastikan overlay di atas gambar */
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 800px;
+      text-align: center;
+      animation: fadeInUp 2s ease-out forwards;
+      opacity: 0;
+      z-index: 2; /* Pastikan konten di atas overlay */
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Timeline */
+    .timeline {
+      position: relative;
+      padding: 2rem 0;
+      margin: 2rem 0;
+      border-left: 3px solid rgba(255, 255, 255, 0.3); /* Garis abu-abu terang di bg gelap */
+    }
+
+    .timeline::before { /* Titik awal timeline (di bagian paling atas garis) */
+      content: '';
+      position: absolute;
+      left: -7px;
+      width: 14px;
+      height: 14px;
+      background: #fff; /* Titik putih */
+      border-radius: 50%;
+      top: 0;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2); /* Efek cincin halus */
+      z-index: 1;
+    }
+
+    .timeline-step {
+      margin-bottom: 3rem; /* Jarak antar langkah lebih besar */
+      position: relative;
+      padding-left: 2rem; /* Ruang lebih dari garis */
+    }
+
+    .timeline-step::before { /* Titik pada setiap langkah timeline */
+      content: '';
+      position: absolute;
+      left: -10px; /* Sesuaikan posisi agar pas di garis */
+      top: 0.25rem; /* Sesuaikan vertikal agar pas di tengah text/judul */
+      width: 20px; /* Ukuran lebih besar agar lebih terlihat */
+      height: 20px;
+      background: #000; /* Titik hitam */
+      border: 3px solid #fff; /* Border putih */
+      border-radius: 50%;
+      z-index: 1; /* Pastikan di atas garis */
+    }
+
+    .timeline-step h5 {
+      margin-bottom: 0.5rem;
+      /* Warna ini bisa diatur via Bootstrap class text-primary di HTML */
+      /* color: #fff; */ /* Default putih jika tidak ada highlight */
+    }
+
+    /* Scroll animation */
+    .fade-in-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-in-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Kopi Nusantara</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="tentang.html">Tentang</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#produk">Produk</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#testimoni">Testimoni</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#kontak">Kontak</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero-story">
+  <div class="hero-content">
+    <h1 class="display-4 fw-bold">Dari Tanah, Menjadi Cerita</h1>
+    <p class="lead">Kami meracik warisan dan tradisi menjadi rasa yang menyatu dalam secangkir kopi.</p>
+  </div>
+</section>
+
+<section class="py-5 bg-white">
+  <div class="container">
+    <h2 class="display-5 fw-bold mb-4 text-center">Tentang Kami</h2>
+    <p class="lead text-dark mb-4 text-center mx-auto" style="max-width: 800px;">Kopi bukan hanya sekadar minuman. Bagi kami, kopi adalah cerita yang dituangkan dalam cangkir, warisan yang diwariskan dari generasi ke generasi.</p>
+
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <p class="text-secondary mb-3">Dari tanah tinggi Aceh hingga lereng Gunung Ijen, perjalanan kami dimulai dengan satu keyakinan: bahwa kopi Nusantara layak dikenal dunia. Kami memulai sebagai petani kecil di desa, menanam kopi dengan penuh cinta dan kesabaran. Seiring waktu, kecintaan ini tumbuh menjadi visi—membawa kopi asli Indonesia ke hati para penikmat kopi di mana pun mereka berada.</p>
+
+            <p class="text-secondary">Sekarang, Kopi Nusantara tidak hanya menghadirkan kopi. Kami membawa pengalaman—aroma khas yang membangkitkan kenangan, rasa yang membawa Anda kembali ke kebun kopi yang sunyi dan sejuk, dan kisah yang tersimpan di setiap tegukan.</p>
+        </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-dark py-5 text-white">
+  <div class="container">
+    <h3 class="fw-bold mb-5 text-center display-6">Perjalanan Kopi Nusantara</h3>
+    <div class="timeline">
+
+      <div class="timeline-step fade-in-scroll">
+        <h5 class="fw-bold mb-1 text-primary">1600-an</h5>
+        <p class="text-white-50">Kopi pertama kali diperkenalkan di Indonesia oleh Belanda, dimulai dari Batavia dan menyebar ke Sumatera, Jawa, dan Sulawesi.</p>
+      </div>
+
+      <div class="timeline-step fade-in-scroll">
+        <h5 class="fw-bold mb-1 text-primary">1800-an</h5>
+        <p class="text-white-50">Kopi Jawa dikenal dunia, menjadi simbol kualitas dan ekspor utama dari Hindia Belanda.</p>
+      </div>
+
+      <div class="timeline-step fade-in-scroll">
+        <h5 class="fw-bold mb-1 text-primary">1970-an</h5>
+        <p class="text-white-50">Munculnya koperasi petani kopi lokal yang memperjuangkan kualitas dan keadilan perdagangan.</p>
+      </div>
+
+      <div class="timeline-step fade-in-scroll">
+        <h5 class="fw-bold mb-1 text-primary">2000-an</h5>
+        <p class="text-white-50">Geliat kopi spesialti meningkat. Kopi Gayo, Toraja, dan Flores mulai dikenal secara global.</p>
+      </div>
+
+      <div class="timeline-step fade-in-scroll">
+        <h5 class="fw-bold mb-1 text-primary">Hari Ini</h5>
+        <p class="text-white-50">Kopi Nusantara berkembang sebagai simbol warisan budaya. Kami hadir untuk menjaga dan menyebarkannya ke dunia.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="py-4 text-center bg-white">
+  <a href="index.html#tentang" class="btn btn-dark rounded-pill px-4">Kembali ke Beranda</a>
+</section>
+
+<footer class="bg-dark text-white text-center py-3">
+  <p>&copy; 2025 Kopi Nusantara. All rights reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Scroll animation for timeline
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 }); // Menyesuaikan threshold untuk kapan elemen dianggap 'terlihat'
+
+  document.querySelectorAll('.fade-in-scroll').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
